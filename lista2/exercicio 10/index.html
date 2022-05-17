@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>L2E3</title>
+    </head>
+    <body>
+
+        <form action="">
+
+        <label for="idReta1">Reta 1</label><br>
+        <input type="number" name="nmReta1" id="idReta1" step="0.01">
+        <br><br>
+        <label for="idReta2">Reta 2</label><br>
+        <input type="number" name="nmReta2" id="idReta2" step="0.01">
+        <br><br>
+        <label for="idReta3">Reta 3</label><br>
+        <input type="number" name="nmReta3" id="idReta3" step="0.01">
+        <br><br>
+        <output id="idOut">Resultado: </output>
+        <br><br>
+        <input type="button" value="Testar Temp" onclick="testar()">
+   
+    </form>
+    
+    <script>
+
+        function testar(){
+            var reta1 = Number(document.getElementById("idReta1").value)
+            var reta2 = Number(document.getElementById("idReta2").value)
+            var reta3 = Number(document.getElementById("idReta3").value)
+            
+ 
+            var isTriangulo = true
+
+               if ((reta1 + reta2) < reta3) {
+                    isTriangulo = false
+            } 
+                if ((reta3 + reta1) < reta2) {
+                    isTriangulo = false
+                } 
+                if ((reta2 + reta3) + reta1) {
+                    isTriangulo = false
+                } 
+                   
+            
+                
+                }
+            
+            document.getElementById("idOut").value = mensagem
+
+        
+
+    </script>
+
+
+
+        
+        
+    </body>
+</html>

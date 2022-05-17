@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+         <meta charset="UTF-8">
+         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Urna Eletrônica</title>
+    </head>
+    <body>
+       
+        
+         <form action="" method="get">
+             <fieldset>
+                 <legend>Urna Eletrônica</legend>
+
+                    <label for="idNumeroEleitoral">Numero Eleitoral:</label>
+                    <input type="number" id="idNumeroEleitoral" name="nmNumeroEleitoral" size="5">
+                    <br><br>
+
+                    <label for="idNomecandidato">Nome Candidato:</label>
+                    <input type="text" id="idNomeCandidato" name="nmNomeCandidato" readonly>
+                    <br><br>         
+                                        
+            
+                    <label for="idSelectCandidato">Selecione seu Candidato:</label>
+                    <input list="idNumCandidato" id="idSelectCandidato">
+                    <datalist id="idNumCandidato"> 
+                        <option value="Fulano">12345</option>
+                        <option value="Ciclano">11223</option>
+                        <option value="Beltrano">11122</option>
+                        <option value="Joao">13212</option>            
+                    </datalist> 
+                   <br><br>
+                    <div>
+                        <Figure>
+                            <img src="assets/candidato.png" alt="imgcandidato" width="90">
+                        </Figure>
+                    </div>   
+                    <input type="submit" value="Confirmar">
+                    <input type="reset" value="Cancelar">
+                    <input type="button" value="Branco">
+            </fieldset>
+        </form>
+
+        <script>
+
+            
+
+
+
+
+        </script>
+ 
+    </body>
+</html>

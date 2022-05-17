@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+
+    <body>
+  
+            <label for="IdNum1">Altura</label>
+            <input type="number" name="nmNum1" id="idNum1"><br>
+            <label for="IdResultado">Peso Ideal</label>
+            <input type="text" name="nmResultado" id="idResultado"><br>
+
+            <label for="idGenero">Gênero:</label>
+            <input type="radio" id="idFeminino" name="nmGenero" value="44.7" checked>
+            <label for="idFeminino">Feminino</label>
+            <input type="radio" id="idMasculino" name="nmGenero" value="58" checked>
+            <label for="idMasculino">Masculino</label><br>                                  
+            <br><br>
+            <output id="idOut">Peso Ideal: </output>
+            <br><br>
+
+    
+            <input type="button" value="Masculino" onclick="calcularMasc()">
+
+            <input type="button" value="Feminino" onclick="calcularFem()">
+        
+
+        <script>
+           
+
+            var num1
+            var feminino
+            var masculino 
+            var resultado
+
+             
+
+        function calcularFem(){
+
+            num1 = Number(document.getElementById("idNum1").value)           
+            feminino = 44.7
+        
+            
+            resultado = (62.1 * num1) - feminino
+            
+            console.log("Resultado: " + resultado)
+            document.getElementById("idResultado").value = resultado.toFixed(2)
+            document.getElementById("idOut").value = "Peso ideal: " + resultado.toFixed(2)
+
+            }
+
+            function calcularMasc(){
+
+            num1 = Number(document.getElementById("idNum1").value)           
+            masculino = 58
+
+
+            resultado = (72.1 * num1) - masculino
+
+            console.log("Resultado: " + resultado)
+            document.getElementById("idResultado").value = resultado.toFixed(2)
+            document.getElementById("idOut").value = "Peso ideal: " + resultado.toFixed(2)
+
+
+
+
+
+
+}
+ 
+
+
+
+
+
+        </script>
+
+        
+
+
+
+
+
+
+    </body>
+</html>

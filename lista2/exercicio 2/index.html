@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>L2</title>
+    </head>
+    <body>
+
+        <form action="">
+            <label for="idIdade">Idade</label><br>
+            <input type="number" name="nmNum1" id="idNum1">
+            <br><br>
+            <output id="idOut">Carteira</output>
+            <br><br>
+            <input type="button" value="Verificar" onclick="verificar()">
+        </form>
+
+        <script>
+
+            function verificar(){
+
+                var num1 = Number (document.getElementById("idNum1").value)
+
+                var saida
+            
+                if (num1 >= 18) {
+                    saida = "Pode dirigir"
+                } else {
+                    saida = "Não pode dirigir"  
+            
+                }
+
+
+
+                document.getElementById("idOut").value = " Carteira: " + saida
+            }
+
+           
+
+
+
+
+
+
+        </script>
+
+
+
+        
+        
+    </body>
+</html>

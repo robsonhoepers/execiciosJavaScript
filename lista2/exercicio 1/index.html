@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>L2E1</title>
+    </head>
+    <body>
+
+        <form action="">
+            <label for="idNum1">Número</label><br>
+            <input type="number" name="nmNum1" id="idNum1">
+            <br><br>
+            <output id="idOut">Out1</output>
+            <br><br>
+            <input type="button" value="Verificar" onclick="verificar()">
+        </form>
+
+        <script>
+
+            function verificar(){
+
+                var num1 = Number (document.getElementById("idNum1").value)
+
+                var saida
+            
+                if (num1 > 20) {
+                    saida = (num1 / 2)
+                } else {
+                    saida = num1  
+            
+                }
+
+
+
+                document.getElementById("idOut").value = " Out1: " + saida
+            }
+
+           
+
+
+
+
+
+
+        </script>
+
+
+
+        
+        
+    </body>
+</html>

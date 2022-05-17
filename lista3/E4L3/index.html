@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>E4L3</title>
+    </head>
+
+    <body>
+        
+        <form action="">
+
+            <label for="idNum1">Número 1</label><br>
+            <input type="number" name="nmNum1" id="idNum1">
+            <br><br>
+            <output id="idOut"></output>
+            <br><br>
+            <input type="button" value="Verificar" onclick="verificar()">
+        </form>
+
+        
+        <script>
+
+
+        function verificar(){
+           
+            var num1 = Number(document.getElementById("idNum1").value)
+            var mensagem
+
+            if ((num1 > 30 && num1 < 90)) {
+                    console.log("o numero está no intervalo entre 30 e 90");
+                    mensagem = ("o numero está no intervalo entre 30 e 90")
+                }
+
+               document.getElementById("idOut").value = mensagem
+
+            }
+
+        
+
+
+
+        
+        </script>   
+    </body>
+</html>

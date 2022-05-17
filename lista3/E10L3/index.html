@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+         <meta charset="UTF-8">
+         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fom XPTO</title>
+    </head>
+    <body>
+       
+        
+         <form action="" method="get">
+             <fieldset>
+                 <legend>Login</legend>
+
+                    <label for="Username">Username:</label><br>
+                    <input type="text" id="idUsername" name="Username" autocomplete="on" required value=""><br>
+                    <label for="Password">Password:</label><br>
+                    <input type="password" id="idPassword" name="Password" autocomplete="off" minlength="8" maxlength="15" required value="">
+                    <br><br>  
+
+                    <input type="button" value="Enviar" onclick="pegarNome()">
+                    <input type="button" value="Recuperar Senha">
+            </fieldset>
+        </form>    
+
+        <script>
+
+            var username
+            var password            
+                                            
+        function pegarNome(){
+            
+            username = document.getElementById("idUsername").value
+            console.log("Username: " + username)            
+            password = document.getElementById("idPassword").value
+            console.log("Password: " + password)   
+           
+        }
+
+
+
+
+        </script>
+
+
+
+           
+
+
+    </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>L2E5</title>
+    </head>
+    <body>
+
+        <form action="">
+            <label for="idNum1">Numero</label><br>
+            <input type="number" name="nmNum1" id="idNum1">
+            <br><br>
+            <output id="idOut">Resultado</output>
+            <br><br>
+            <input type="button" value="Verificar" onclick="verificar()">
+        </form>
+
+        <script>
+
+            function verificar(){
+
+                var num1 = Number (document.getElementById("idNum1").value)
+
+                var saida
+
+                resultado = num1 % 4
+                resultado2 = num1 % 100
+                resultado3 = num1 % 400
+                console.log("Resto: " + resultado.toFixed(2))
+                
+                if (resultado == 0) {
+                saida = "é bissexto  "
+            } else {
+                if (resultado2 == 0) {
+                    saida = "é bissexto"
+                } else {
+                    if (resultado3 == 0) {
+                    saida = "é bissexto"
+                } else {
+                    saida = "não é bissexto"
+                
+                }  
+                }
+            }
+              
+
+                console.log("Resto: " + saida);
+                document.getElementById("idOut").value = " Resultado: " + saida
+            }
+
+           
+
+
+
+        </script>
+
+
+
+        
+        
+    </body>
+</html>

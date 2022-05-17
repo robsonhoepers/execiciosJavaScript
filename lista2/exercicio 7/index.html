@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>L2E6</title>
+    </head>
+    <body>
+
+        <form action="">
+            <label for="idTexto1">Capital</label><br>
+            <input type="text" name="nmTexto1" id="idTexto1">
+            <br><br>
+            <output id="idOut">Resultado</output>
+            <br><br>
+            <input type="button" value="Verificar" onclick="verificar()">
+        </form>
+
+        <script>
+
+            function verificar(){
+
+                var texto1 = ((document.getElementById("idTexto1").value)).toUpperCase() 
+                // .toUpperCase() quando utilizado, coloca todas as letras em maiusculo, colocar o texto em questao maisculo para comparar.
+                // .toLowerCase() quando utilizado, coloca todas as letras em minusculo, colocar o texto em questao maisculo para comparar.
+                var saida
+
+                
+                if (texto1 == "Brasília"
+                || texto1 == "brasília"
+                || texto1 == "brasilia"
+                || texto1 == "Brasilia") {
+                    saida = "Certo"
+                } else {
+                    saida = "Errado"
+            
+                }
+
+
+                
+                document.getElementById("idOut").value = " Resultado: " + saida
+            }
+
+           
+
+
+
+
+
+
+        </script>
+
+
+
+        
+        
+    </body>
+</html>

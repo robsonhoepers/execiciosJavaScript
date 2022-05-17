@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>E7L3</title>
+    </head>
+
+    <body>
+        
+        <form action="">
+            <label for="idNum1">Valor Produto</label><br>
+            <input type="number" name="nmNum1" id="idNum1">
+            <br><br>
+            <output id="idOut">Valor Final</output>
+            <br><br>
+            <input type="button" value="Verificar" onclick="calcular()">
+        </form>
+
+        <script>
+
+
+            function calcular(){
+
+
+            var num1 = Number (document.getElementById("idNum1").value)
+            
+
+            if (num1 <= 20) {
+                document.getElementById("idOut").value = num1 * 1.5
+                console.log(num1 * 1.5);
+            } else {
+                document.getElementById("idOut").value = num1 * 1.35
+                console.log(num1 * 1.35);
+            }
+
+            }
+                //document.getElementById("idOut").value = " Out1: " + saida
+            
+        </script>
+
+        
+
+
+
+
+        
+    </body>
+</html>

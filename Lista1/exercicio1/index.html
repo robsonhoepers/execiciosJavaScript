@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+         <meta charset="UTF-8">
+         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fom XPTO</title>
+    </head>
+    <body>
+       
+        
+         <form action="" method="get">
+             <fieldset>
+                 <legend>Cadastro de Alunos</legend>
+
+                    <label for="idNome">Nome:</label>
+                    <input type="text" id="idNome" name="nmNome" value="">
+                    <br><br>
+               
+                    <label for="idSobrenome">Sobrenome:</label>
+                    <input type="text" id="idSobrenome" name="nmSobrenome" value="" required>
+                    <br><br>
+
+                    <label for="idDataNasc">Data Nascimento:</label>
+                    <input type="date" id="idDataNasc" name="nmDataNasc" min="1945-04-01" max="2023-01-01" value="" required> 
+                    <br><br>
+
+                    <label for="idEndereco">Endereço:</label>
+                    <input type="text" id="idEndereco" name="nmEndereco" size="60" value="">
+                    <br><br>
+
+                    <label for="idNomeMae">Nome da Mãe:</label>
+                    <input type="text" id="idNomeMae" name="nmNomeMae" size="40" value="" required>
+                    <br><br>
+                    <label for="idNomePai">Nome do Pai:</label>
+                    <input type="text" id="idNomePai" name="nmNomePai" size="40" value="">                
+                    <br><br>
+
+                    <label for="idEmail">E-mail:</label>
+                    <input type="email" id="idEmail" name="nmEmail" size="70" value="">
+                    <br><br>
+
+                    <label for="idSerie">Série:</label>
+                    <input type="number" id="idSerie" name="nmSerie" min="1" max="9" value="">                                   
+                    <br><br>
+                    
+                    <label for="idGenero">Gênero:</label>
+                    <input type="radio" id="idFeminino" name="nmGenero" value="F" checked>
+                    <label for="idFeminino">Feminino</label>
+                    <input type="radio" id="idMasculino" name="nmGenero" value="M" checked>
+                    <label for="idMasculino">Masculino</label><br>                                  
+                    <br><br>
+
+                    <input type="button" value="Enviar" onclick="pegarNome()">
+                    <input type="button" value="Reset">
+
+            </fieldset>
+        </form>
+
+            <script>
+
+                var nome
+                var sobrenome 
+                var dataNasc
+                var endereco
+                var nomeMae
+                var nomePai
+                var email
+                var serie
+                var feminino
+                var masculino
+
+                         
+
+            function pegarNome(){
+
+                nome = document.getElementById("idNome").value
+                console.log("Nome: " + nome)
+                sobrenome = document.getElementById("idSobrenome").value
+                console.log("Sobrenome: " + sobrenome)
+                dataNasc = document.getElementById("idDataNasc").value
+                console.log("DataNasc: " + dataNasc)
+                endereco = document.getElementById("idEndereco").value
+                console.log("Endereço: " + endereco)
+                nomeMae = document.getElementById("idNomeMae").value
+                console.log("Nome da Mãe: " + nomeMae)
+                nomePai = document.getElementById("idNomePai").value
+                console.log("Nome do Pai: " + nomePai)
+                email = document.getElementById("idEmail").value
+                console.log("Email: " + email)   
+                serie = document.getElementById("idSerie").value
+                console.log("Série: " + serie)
+                feminino = document.getElementById("idFeminino").checked
+                masculino = document.getElementById("idMasculino").checked
+                console.log("Feminino: " + feminino + " Masculino: " + masculino)  
+            }
+
+
+
+
+            </script>
+
+    </body>
+</html>
