@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>L5E2</title>
+    </head>
+    <body>
+
+        <body>
+            <form action="">
+                <label for="idLimiteInf">Limite Inferior</label><br>
+                <input type="number" name="nmLimiteInf" id="idLimiteInf">
+                <br><br>
+                <label for="idLimiteSup">Limite Superior</label><br>
+                <input type="number" name="nmLimiteSup" id="idLimiteSup">
+                <br><br>
+                <button type="button" onclick="contarWhile()">Contar While</button><br>
+                <output id="idOutWhile"></output><br>
+                
+                
+        
+                
+            </form>
+        
+            <Script>
+        
+                function contarWhile() {
+                    let limiteInf = Number(document.querySelector("#idLimiteInf").value)   
+                    let limiteSup = Number(document.querySelector("#idLimiteSup").value)                  
+                    let numerosPrimos = ""
+                    //let numerosImpares = ""
+                    let cont = limiteInf
+                    
+                    
+            
+                limiteSup++
+                while (cont < limiteSup) {
+                if ((cont % 1) == 1 ) {
+                    numerosPrimos = numerosPrimos + cont + " "
+                     
+                }if ((cont % cont ) == cont) {
+                    numerosPrimos = numerosPrimos + cont + " "
+                  
+                }
+                cont++
+            }
+
+            
+                document.getElementById("idOutWhile").value = "Numeros primos entre : " + limiteInf + " "  + numerosPrimos + limiteSup + " "
+            
+                //document.getElementById("idOutWhile").value = "Numeros Impares: " + numerosImpares
+           
+           
+        }
+
+
+
+
+        
+
+        
+
+
+
+        </script>
+
+    </body>
+</html>

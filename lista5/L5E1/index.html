@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>L5E1</title>
+        </head>
+        <body>
+
+
+            <form action="">
+
+            <button type="button" onclick="contarWhile()">Contar While</button><br>
+            <output id="idOutDiv3"></output><br>
+            <output id="idOutDiv5"></output><br>
+            <br><br>
+
+            </form>
+                
+            <script>
+                 function contarWhile() {
+                    let limiteInf =  0 
+                    let limiteSup =  101
+                    
+                    //let numImpar = document.getElementById("idImar").checked
+                    let numerosDiv3 = ""
+                    let numerosDiv5 = ""
+                    let cont = limiteInf
+                    
+
+            limiteSup++
+            while (cont < limiteSup) {
+                if ((cont % 3) == 0 ) {
+                    numerosDiv3 = numerosDiv3 + cont + " "
+                     
+                }if ((cont % 5 ) == 0) {
+                    numerosDiv5 = numerosDiv5 + cont + " "
+                  
+                }
+                cont++
+            }
+
+            
+                document.getElementById("idOutDiv3").value = "Numeros divisiveis por 3: " + numerosDiv3
+           
+                document.getElementById("idOutDiv5").value = "Numeros divisiveis por 5: " + numerosDiv5
+            
+           
+        }
+
+            </script>
+        </body>
+</html>

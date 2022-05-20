@@ -10,10 +10,28 @@
 
         <output id="idOut"></output>
 
-        
+        <script>
+            var contador = 30
+            var textoContador = ""
+            var out = document.getElementById("idOut")
+
+            //Enquanto - usado quando não sabemos a qtd de vezes 
+            console.log("Inicio ");
+            while (contador > 0) {
+                if ((contador % 4) == 0) {
+                    textoContador  = textoContador + "[" + contador + "]"
+                } else {
+                    textoContador  = textoContador + contador + " "
+                }
+                console.log("while " + contador)
+                contador - 1
+            }
+            console.log("Fim...");
+
+            out.value = "Inicio " + textoContador + " Fim..."
 
 
-
+        </script>    
 
 
     </body>

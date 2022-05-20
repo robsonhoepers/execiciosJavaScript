@@ -4,17 +4,44 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>E1L4</title>
+        <title>E3L4</title>
     </head>
     <body>
-
         <output id="idOut"></output>
 
-        
+        <script>
+            var contador = 100
+            var textoContador = ""
+            var out = document.getElementById("idOut")
+
+            //Enquanto - usado quando não sabemos a qtd de vezes 
+            console.log("Inicio ");
+            do {
+                textoContador  = textoContador + contador + " "
+                console.log("do While " + contador);  
+                contador-= 5
+            } while (contador > -1)
+           
+            console.log("Fim...");
+
+            out.value = "Inicio " + textoContador + " Fim..."
 
 
+            /*Faça enquanto - se precisar executar pelo uma vez
+            
 
+            //Para - usado quando sabemos exatamente quantas vezes
+            for (let ind = 0; ind < 10; ind++) {
+                console.log("For " + ind)  
+            }*/
+            /*while (contador < 21) {
+                textoContador  = textoContador + contador + " "
 
+                console.log("while " + contador)
+                contador+= 4
+            }*/
+         
 
+        </script>        
     </body>
 </html>
