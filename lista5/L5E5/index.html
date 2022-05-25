@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>L5E3</title>
+        </head>
+        <body>
+               
+            <form action="">
+
+                <label for="idPreco">Preço:</label><br>
+                <input type="number" id="idPreco" name="nmPreco" step="0.01">
+                <br><br>
+                <output id="idOut"></output>
+                <br><br>
+                <input type="button" value="Enviar" onclick="enviarNumero()">
+                <input type="button" value="relatorio" onclick="relatorio()">
+            </form>
+    
+            <script>
+                var menorPreco = 99999999999
+                var maiorPreco = 0
+                
+    
+                function enviarNumero() {
+                    
+                    
+                    let preco = Number(document.getElementById("idPreco").value)
+                    
+                       
+                    if (preco < menorPreco) {
+                        menorPreco = preco
+                    }
+                    if (preco > maiorPreco) {
+                        maiorPreco = preco
+                    }
+                    
+                console.log("menor: " + menorPreco);
+                console.log("maior: " + maiorPreco);
+                }
+                function relatorio(){
+                                  
+                document.getElementById("idOut").value = "Menor Preco: " + menorPreco + " Maior Preco " + maiorPreco
+    
+                }
+             
+            </script>
+        </body>
+</html>

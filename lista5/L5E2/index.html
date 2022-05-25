@@ -16,8 +16,8 @@
                 <label for="idLimiteSup">Limite Superior</label><br>
                 <input type="number" name="nmLimiteSup" id="idLimiteSup">
                 <br><br>
-                <button type="button" onclick="contarWhile()">Contar While</button><br>
-                <output id="idOutWhile"></output><br>
+                <button type="button" onclick="contarfor()">Contar While</button><br>
+                <output id="idOutFor"></output><br>
                 
                 
         
@@ -26,34 +26,35 @@
         
             <Script>
         
-                function contarWhile() {
+                function contarFor() {
                     let limiteInf = Number(document.querySelector("#idLimiteInf").value)   
                     let limiteSup = Number(document.querySelector("#idLimiteSup").value)                  
-                    let numerosPrimos = ""
-                    //let numerosImpares = ""
-                    let cont = limiteInf
+                   
                     
                     
+                    let isPrimo = true
+                    for (let n = limiteInf; n < limiteSup + 1; n++) {
+                        for (let i = 2; i < n - 1; i++) {
+                           if (n % i == 0){
+                               isPrimo = false
+                           }
+                        }
+                        if (isPrimo) {
+                            console.log(n + "é Primo")
+                        }
+                        isPrimo = true
+                    }
             
-                limiteSup++
-                while (cont < limiteSup) {
-                if ((cont % 1) == 1 ) {
-                    numerosPrimos = numerosPrimos + cont + " "
-                     
-                }if ((cont % cont ) == cont) {
-                    numerosPrimos = numerosPrimos + cont + " "
-                  
-                }
-                cont++
+                
             }
 
             
-                document.getElementById("idOutWhile").value = "Numeros primos entre : " + limiteInf + " "  + numerosPrimos + limiteSup + " "
+                
             
-                //document.getElementById("idOutWhile").value = "Numeros Impares: " + numerosImpares
+                
            
            
-        }
+       
 
 
 

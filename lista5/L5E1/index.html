@@ -41,7 +41,18 @@
                 cont++
             }
 
-            
+            for (let index = 1; index < 101; index++) {
+               
+                if ((cont % 3) == 0 ) {
+                    numerosDiv3 = numerosDiv3 + cont + " "
+                     
+                }if ((cont % 5 ) == 0) {
+                    numerosDiv5 = numerosDiv5 + cont + " "
+                  
+                }
+                cont++
+                
+            }
                 document.getElementById("idOutDiv3").value = "Numeros divisiveis por 3: " + numerosDiv3
            
                 document.getElementById("idOutDiv5").value = "Numeros divisiveis por 5: " + numerosDiv5

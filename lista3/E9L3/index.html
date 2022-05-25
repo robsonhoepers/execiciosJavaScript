@@ -14,39 +14,79 @@
             <input type="radio" name="nmArea" id="idCirc" checked>
             <label for="idCirc">Circulo</label>
             <input type="radio" name="nmArea" id="idRetangulo">
-            <label for="idRetangulo">Retãngulo</label>            
-            <input type="radio" name="nmArea" id="idTrianReta" checked>
+            <label for="idRetangulo">Retangulo</label>            
+            <input type="radio" name="nmArea" id="idTrianReta">
             <label for="idTrianReta">Triangulo Retangulo</label>
-            <input type="radio" name="nmArea" id="idTrianEquil">
-            <label for="idTrianEquil">Triangulo Equilatero</label>
+            <input type="radio" name="nmArea" id="idQuadrado">
+            <label for="idTriEquilatero">Triangulo Equilátero</label>
             <br><br>
             <input type="button" value="Selecionar Objeto" onclick="selecionar()">
             <input type="button" value="Calcular Area" onclick="calcular()">
-
-
             
+            <br><br>
+            <label for="idMedidaBase" id="idLbMedidaBase" >Raio</label>
+            <input type="number" id="idMedidaBase" nm="idMedidaBase" step="0.01">
+            <br><br>
+            <label for="idMedidaSeq" id="idLbMedidaSeq">Altura</label>
+            <input type="number" id="idMedidaSeq" nm="idMedidaSeq" step="0.01">
+            <br><br>
+            <output id="idOut">Area:</output>
         </form>
 
         <script>
 
+            function selecionar(){
+                const opCirculo = document.getElementById("idCirculo").checked
+                const opRetangulo = document.getElementById("idRetangulo").checked
+                const opTrianReta = document.getElementById("idTrianReta").checked
+                const opTriEquilatero = document.getElementById("idTriEquilatero").checked
+
+                if (opCirculo) {
+                    document.getElementById("idLbMedidaSeq").disabled = true
+                    document.getElementById("idMedidaSeq").disabled = true
+
+                    document.getElementById("idLbMedidaBase").innerText = "Raio"
+                } else if (opRetangulo) {
+                    
+                } else if (opTrianReta) {
+                    
+                } else if (opTriEquilatero) {
+                    document.getElementById("idLbMedidaSeq").disabled = true
+                    document.getElementById("idMedidaSeq").disabled = true
+
+                    document.getElementById("idLbMedidaBase").innerText = "Lado"
+                }
+
+
+
+            }
+
+
+
+
+
+
+
 
             function calcular(){
-
-
-            var num1 = Number (document.getElementById("idNum1").value)
-            
-
-            if (num1 <= 20) {
-                document.getElementById("idOut").value = num1 * 1.5
-                console.log(num1 * 1.5);
-            } else {
-                document.getElementById("idOut").value = num1 * 1.35
-                console.log(num1 * 1.35);
+                const opCirculo = document.getElementById("idCirculo").checked
+                const opRetangulo = document.getElementById("idRetangulo").checked
+                const opTrianReta = document.getElementById("idTrianReta").checked
+                const opTriEquilatero = document.getElementById("idTriEquilatero").checked
+              
+                var resultado
+                if (rdRetangulo) {
+                   resultado = param1 * param2
+                } else if (rdCirculo) {
+                    resultado = 3.14 * (param1**2)
+                } else if (rdTrianguloRetangulo) {
+                    resultado = ((param1 * param2) / 2)
+                } else if (rdQuadrado) {
+                   resultado = param1** 2
+                }
+                document.getElementById("idOut").value = resultado
+                
             }
-
-            }
-                //document.getElementById("idOut").value = " Out1: " + saida
-            
         </script>
 
         

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>L5E3</title>
+        </head>
+        <body>
+               
+            <form action="">
+
+                <label for="idIdade">Idade:</label><br>
+                <input type="number" id="idIdade" name="nmIdade">
+                <br><br>
+                <label for="idOutMediaIdades"> Méida de Idade:</label>                
+                <output id="idOutMediaIdades"></output>
+                <br>
+                <label for="idOutQtdPessoasMaior18">Qntd Pessoas Maior 18:</label>                
+                <output id="idOutQtdPessoasMaior18"></output>
+                <br>
+                <label for="idOutQtdPessoasMenor5">Qntd Pessoas Menor de 5</label>                
+                <output id="idOutQtdPessoasMenor5"></output><br>
+
+                <label for="idOutMaiorIdade">Maior Idade: </label>                
+                <output id="idOutMaiorIdade"></output>
+                <br><br>
+                <input type="button" value="Ler Idade" onclick="lerIdade()">
+                <input type="button" value="relatorio" onclick="relatorio()">
+            </form>
+    
+            <script>
+                   
+                    var mediaIdade = 0
+                    var contMaiorDezoito = 0
+                    var contMenorCinco = 0
+                    var maiorIdade = -1
+                    var contIdade = 0
+                
+                    function lerIdade() {
+                    
+                    
+                    let idade = Number(document.getElementById("idIdade").value)
+                                       
+                                     
+                    
+                                        
+                        if (idade < 5) {
+                            contMenorCinco++
+                        }
+                        if (idade > 18) {
+                            contMaiorDezoito++
+                        }
+                        
+                    
+                        if (idade > maiorIdade) {
+                        maiorIdade = idade
+                    }
+                    }   
+                    console.log("Idade Lida " + idade);
+                    console.log("Idade Maior 18 " + contMaiorDezoito);
+                    console.log("numeros Menor 5: " + contMenorCinco)
+                    console.log("Média Idade: " + mediaIdade)
+                    console.log("Maior Idade: " + maiorIdade)
+                   
+                    
+               
+                
+                function relatorio(){
+                                  
+                document.getElementById("idOut").value = "Menor Preco: " + menorPreco + " Maior Preco " + maiorPreco
+    
+                }
+             
+            </script>
+        </body>
+</html>

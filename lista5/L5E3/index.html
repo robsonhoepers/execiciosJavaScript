@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>L5E3</title>
+        </head>
+        <body>
+
+
+            <form action="">
+
+            
+            
+            <output id="idNumerosGerados"></output>
+            <output id="idOutMaior5"></output><br>
+            <output id="idOutDiv3"></output><br>
+            <br><br>
+            
+            <input type="button" value="gerar numero randomico" onclick="gerarNum()">
+
+            </form>
+                
+            <script>
+                 
+                
+
+                function gerarNum(){
+                    var contMaiorCinco = 0
+                    var contDivTres = 0
+                    var numSorteados = ""
+                    for (let i = 0; i < 20; i++) {                    
+                    numgerado = parseInt(Math.random() * 11)
+                    console.log(numgerado);                    
+                        if (numgerado > 5) {
+                            contMaiorCinco++
+                        }
+                        if ((numgerado % 3) == 0) {
+                            contDivTres++
+                        }
+                        numSorteados = numSorteados + numgerado + " "
+                    }   
+                    
+                    console.log("numeros sorteados " + numSorteados);
+                    console.log("numeros mior que 5: " + contMaiorCinco)
+                    console.log("numeros div 3: " + contDivTres)
+            }  
+                                    
+                                      
+                   // document.getElementById("idOutDiv3").value = "Numeros divisiveis por 3: " + numerosDiv3
+            
+                    //document.getElementById("idOutDiv5").value = "Numeros divisiveis por 5: " + numerosDiv5
+            
+           
+        
+
+
+
+    
+            </script>
+        </body>
+</html>

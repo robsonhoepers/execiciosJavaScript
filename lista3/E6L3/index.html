@@ -10,12 +10,18 @@
     <body>
         
         <form action="">
-            <label for="idNum1">Número 1</label><br>
-            <input type="number" name="nmNum1" id="idNum1">
+            <label for="idNum1">Numero 1:</label><br>
+            <input type="number" id="idNum1" name="nmNum1">
             <br><br>
-            <output id="idOut">Salário Liquido</output>
+            <label for="idSinal">sinal:</label><br>
+            <input type="text" id="idSinal" name="nmSinal">
             <br><br>
-            <input type="button" value="Verificar" onclick="calcular()">
+            <label for="idNum2">Numero 2:</label><br>
+            <input type="number" id="idNum2" name="nmNum2">
+            <br><br>
+            <output id="idOut"></output>
+            <br><br>
+            <input type="button" value="Calcular" onclick="calcular()">
         </form>
 
         <script>
@@ -23,26 +29,27 @@
 
             function calcular(){
 
-
-            var num1 = Number (document.getElementById("idNum1").value)
+                let num1 = Number(document.getElementById("idNum1").value) 
+                let num2 = Number(document.getElementById("idNum2").value) 
+                let sinal = document.getElementById("idSinal").value 
             
 
 
-            if (num1 <= 600) {
-                document.getElementById("idOut").value = num1
-                console.log(num1);
+            if (sinal == "+") {
+                document.getElementById("idOut").value = num1 + num2
+                console.log(num1 + num2);
                 }  
-            if (num1 > 600 && num1 < 1200) {
-                document.getElementById("idOut").value = num1 * 0.75
-                console.log(num1 * 0.75); 
+            if (sinal == "-") {
+                document.getElementById("idOut").value = num1 - num2
+                console.log(num1 - num2); 
             }
-            if (num1 > 1200 && num1 < 2000) {
-                document.getElementById("idOut").value = num1 * 0.70
-                console.log(num1 * 0.70);             
+            if (sinal == "*") {
+                document.getElementById("idOut").value = num1 * num2
+                console.log(num1 * num2);             
             } 
-            if (num1 >= 2000) {
-                document.getElementById("idOut").value =  num1 * 0.65
-                console.log(num1 * 0.65); 
+            if (sinal == "/") {
+                document.getElementById("idOut").value =  num1 / num2
+                console.log(num1 / num2); 
                 
             }
             }

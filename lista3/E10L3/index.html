@@ -17,7 +17,8 @@
                     <input type="text" id="idUsername" name="Username" autocomplete="on" required value=""><br>
                     <label for="Password">Password:</label><br>
                     <input type="password" id="idPassword" name="Password" autocomplete="off" minlength="8" maxlength="15" required value="">
-                    <br><br>  
+                    <br><br> 
+                    <output id="idOut"></output> 
 
                     <input type="button" value="Enviar" onclick="pegarNome()">
                     <input type="button" value="Recuperar Senha">
@@ -25,21 +26,33 @@
         </form>    
 
         <script>
+            var userId1 = "E21Aluno1"
+            var userId2 = "E21Aluno2"
+            var userId3 = "E21Aluno3"
 
-            var username
-            var password            
+            var senhaUser1 = "Trocar123"
+            var senhaUser2 = "Senha@123"
+            var senhaUser3 = "123Trocar"
+                   
                                             
         function pegarNome(){
             
-            username = document.getElementById("idUsername").value
+            let username = document.getElementById("idUsername").value
             console.log("Username: " + username)            
-            password = document.getElementById("idPassword").value
+            let password = document.getElementById("idPassword").value
             console.log("Password: " + password)   
-           
+            let msnOut = document.getElementById("idOut")
+
+
+            
         }
 
 
 
+
+        
+	
+	
 
         </script>
 
