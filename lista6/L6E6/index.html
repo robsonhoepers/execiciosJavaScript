@@ -4,40 +4,44 @@
         <meta charset="UTF-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>L6E1</title>
+            <title>L6E6</title>
     </head>
     <body>
         
+        <form action="">
 
+
+            <output id="idOut"></output>
+
+
+
+        </form>
 
         <script>
-
-            var numeros = []
-            let progressao = 0          
+ 
+                var numeros = []
+                                         
                    
-                
-                for (index = 0; index < 10; index ++){
-                    progressao = progressao + 5
-                    numeros[index] = progressao
+                for (index = 0; index < 7; index++) {
+                    numeros.push(parseInt(Math.random() * 101))
                 }
-                     
                 for (let index = 0; index < numeros.length; index++) {
                     console.log(numeros[index]);
-                
-             
+                    document.getElementById("idOut").value = numeros[index]
+                }
 
-
-
-                }    
+    
                 console.table(numeros);
-                console.log(numeros);
-                
            
 
-
+            
 
 
         </script>
         
+
+
+       
+    
     </body>
 </html>
