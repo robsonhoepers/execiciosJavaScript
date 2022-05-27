@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>E5l9</title>
+    </head>
+
+    <body>
+        
+        <form action="">
+            <input type="radio" name="nmTemperatura" id="idTKelvin" checked>
+            <label for="idTKelvin">Kelvin</label>
+            <br>
+            <input type="radio" name="nmTemperatura" id="idTCelsius">
+            <label for="idTCelsius">Celsius</label>
+            <br>
+            <input type="radio" name="nmTemperatura" id="idTFahrenheit">
+            <label for="idTFahrenheit">Fahrenheit</label>
+            <br>
+           
+
+           
+            <label for="idValorTemp" id="idLbValorTemp" >Temperatura </label><br>
+            <input type="number" id="idValorTemp" name="nmValorTemp" step="0.01">
+            <br><br>
+
+            <output id="idOut">Valor :</output>
+            <br><br>
+            <input type="button" value="Escolher" onclick="escolherTemperatura()">
+            <input type="button" value="Calcular" onclick="converter()">
+
+        </form>
+
+        <script>
+
+            function converter() {
+
+                const opTKelvin = document.getElementById("idTKelvin").checked
+                const opTCelsius = document.getElementById("idTCelsius").checked
+                const opTFahrenheit = document.getElementById("idTFahrenheit").checked
+                
+
+                const valorTemp = Number(document.getElementById("idValorTemp").value)
+                let temperaturaC
+                let temperaturaF
+                let temperaturaK
+
+                if (opTKelvin) {
+                    console.log("valor temp " + valorTemp);
+                    temperaturaC = (valorTemp - 273).toFixed(2)
+                    temperaturaF = (((valorTemp - 273) * 1.8) + 32).toFixed(2)
+                    document.getElementById("idOut").value = "Celsius : " + temperaturaC + " e Fahrenheit: " + temperaturaF
+                } else if (opTCelsius) {
+                    temperaturaK = (valorTemp + 273).toFixed(2)
+                    temperaturaF = ((valorTemp * 1.8) + 32).toFixed(2)
+                    document.getElementById("idOut").value = "Kelvin : " + temperaturaK + " e Fahrenheit: " + temperaturaF
+                } else if (opTFahrenheit) {
+                    temperaturaK = ((((valorTemp - 32) * 5)/9) + 273).toFixed(2)
+                    temperaturaC = ((valorTemp - 32) / 1.8).toFixed(2)
+                    document.getElementById("idOut").value = "Kelvin : " + temperaturaK + " e Celsius: " + temperaturaC
+                }
+
+                //console.log("temperatura " + temperatura);
+                //document.getElementById("idOut").value = "temperatura : " + temperaturaK
+            }
+
+
+            /*
+            kelvin > celsius  		C = K - 273
+            kelvin > fahrenheit		F = (K - 273) * 1.8 + 32
+            celsius > kelvin		K = C + 273
+            celsius > fahrenheit		F = C * 1.8 + 32
+            fahrenheit > kelvin		K = (F - 32) * 5/9 + 273
+            fahrenheit > celsius		C = (F - 32) / 1.8
+
+            */
+
+
+            /*
+            function escolherFormaGeo() {
+                const opCirculo = document.getElementById("idCirculo").checked
+                const opRetangulo = document.getElementById("idRetangulo").checked
+                const opTriRetangulo = document.getElementById("idTriRetangulo").checked
+                const opTriEquilatero = document.getElementById("idTriEquilatero").checked
+
+                
+                if (opCirculo) {
+                    document.getElementById("idLbMedidaSeq").hidden = true
+                    document.getElementById("idMedidaSeq").hidden = true
+
+                    document.getElementById("idLbMedidaBase").innerText = "Raio"
+                } else if (opRetangulo) {
+                    document.getElementById("idLbMedidaSeq").hidden = false
+                    document.getElementById("idMedidaSeq").hidden = false
+
+                    document.getElementById("idLbMedidaBase").innerText = "Base"
+                    document.getElementById("idLbMedidaSeq").innerText = "Altura"
+
+                } else if (opTriRetangulo) {
+                    document.getElementById("idLbMedidaSeq").hidden = false
+                    document.getElementById("idMedidaSeq").hidden = false
+
+                    document.getElementById("idLbMedidaBase").innerText = "Base"
+                    document.getElementById("idLbMedidaSeq").innerText = "Altura"
+                    
+                } else if (opTriEquilatero) {
+                    document.getElementById("idLbMedidaSeq").hidden = true
+                    document.getElementById("idMedidaSeq").hidden = true
+
+                    document.getElementById("idLbMedidaBase").innerText = "Lado"
+                    document.getElementById("idLbMedidaSeq").innerText = "Altura"
+                }
+
+
+            }*/
+
+        </script>
+        
+
+
+
+
+        
+    </body>
+</html>

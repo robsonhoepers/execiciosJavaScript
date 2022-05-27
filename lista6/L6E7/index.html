@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>L6E6</title>
+    </head>
+    <body>
+        
+            <form action="">
+                <label for="idLbNomes">Nomes</label><br>
+                <input type="text" name="nmNomes" id="idNomes">
+                <br><br>
+                
+                <input type="button" value="Enviar" onclick="enviar()">
+                <label for="idContArray">Conteudo do Array:</label><br>
+                <textarea name="nmContArray" id="idContArray" cols="30" rows="10"></textarea>
+            </form>
+
+            
+
+
+
+        
+
+        <script>
+
+                function enviar() {
+                    
+                var names = []
+                let nomes = document.getElementById("idNomes").value
+                let cont = nomes++
+                                         
+                   
+                for (index = 0; index < 7; index++) {
+                    
+                    names.push(nomes)
+                    nomes++
+                }
+                for (let index = 0; index < names.length; index++) {
+                    console.log(names[index]);
+                   
+                }
+                console.table(names)
+
+                }
+    
+                //console.table(names);
+           
+
+            
+
+
+        </script>
+        
+
+
+       
+    
+    </body>
+</html>

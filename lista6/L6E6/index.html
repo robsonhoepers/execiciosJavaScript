@@ -12,7 +12,8 @@
 
 
             <output id="idOut"></output>
-
+            <label for="idContArray">Conteudo do Array:</label><br>
+            <textarea name="nmContArray" id="idContArray" cols="30" rows="10"></textarea>
 
 
         </form>
@@ -27,10 +28,10 @@
                 }
                 for (let index = 0; index < numeros.length; index++) {
                     console.log(numeros[index]);
-                    document.getElementById("idOut").value = numeros[index]
+                    
                 }
 
-    
+                document.getElementById("idContArray").value = numeros
                 console.table(numeros);
            
 

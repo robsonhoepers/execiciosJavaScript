@@ -10,85 +10,99 @@
     <body>
         
         <form action="">
-              
-            <input type="radio" name="nmArea" id="idCirc" checked>
-            <label for="idCirc">Circulo</label>
-            <input type="radio" name="nmArea" id="idRetangulo">
-            <label for="idRetangulo">Retangulo</label>            
-            <input type="radio" name="nmArea" id="idTrianReta">
-            <label for="idTrianReta">Triangulo Retangulo</label>
-            <input type="radio" name="nmArea" id="idQuadrado">
-            <label for="idTriEquilatero">Triangulo Equilátero</label>
+            <input type="radio" name="nmFormaGeo" id="idCirculo" checked>
+            <label for="idCirculo">Circulo</label>
+            <br>
+            <input type="radio" name="nmFormaGeo" id="idRetangulo">
+            <label for="idRetangulo">Retangulo</label>
+            <br>
+            <input type="radio" name="nmFormaGeo" id="idTriRetangulo">
+            <label for="idTriRetangulo">Triângulo Retângulo</label>
+            <br>
+            <input type="radio" name="nmFormaGeo" id="idTriEquilatero">
+            <label for="idTriEquilatero">Triângulo Equilátero</label>
+            <br>
+
+            <label for="idMedidaBase" id="idLbMedidaBase">Raio </label><br>
+            <input type="number" id="idMedidaBase" name="nmMedidaBase" step="0.01">
             <br><br>
-            <input type="button" value="Selecionar Objeto" onclick="selecionar()">
-            <input type="button" value="Calcular Area" onclick="calcular()">
-            
+            <label for="idMedidaSeq" id="idLbMedidaSeq" >Altura </label><br>
+            <input type="number" id="idMedidaSeq" name="nmMedidaSeq" step="0.01">
             <br><br>
-            <label for="idMedidaBase" id="idLbMedidaBase" >Raio</label>
-            <input type="number" id="idMedidaBase" nm="idMedidaBase" step="0.01">
+
+            <output id="idOut">Area :</output>
             <br><br>
-            <label for="idMedidaSeq" id="idLbMedidaSeq">Altura</label>
-            <input type="number" id="idMedidaSeq" nm="idMedidaSeq" step="0.01">
-            <br><br>
-            <output id="idOut">Area:</output>
+            <input type="button" value="Escolher" onclick="escolherFormaGeo()">
+            <input type="button" value="Calcular" onclick="calcularArea()">
+
         </form>
 
         <script>
 
-            function selecionar(){
+            function calcularArea() {
                 const opCirculo = document.getElementById("idCirculo").checked
                 const opRetangulo = document.getElementById("idRetangulo").checked
-                const opTrianReta = document.getElementById("idTrianReta").checked
+                const opTriRetangulo = document.getElementById("idTriRetangulo").checked
                 const opTriEquilatero = document.getElementById("idTriEquilatero").checked
 
+                const baseRaioLado = Number(document.getElementById("idMedidaBase").value)
+                const altura = Number(document.getElementById("idMedidaSeq").value)
+                let area
+
                 if (opCirculo) {
-                    document.getElementById("idLbMedidaSeq").disabled = true
-                    document.getElementById("idMedidaSeq").disabled = true
+                    console.log("raio " + baseRaioLado );
+                    area = baseRaioLado * baseRaioLado * Math.PI
+                } else if (opRetangulo) {
+                    area = baseRaioLado * altura
+                } else if (opTriRetangulo) {
+                    area = (baseRaioLado * altura)/2
+                } else if (opTriEquilatero) {
+                    area = ((baseRaioLado * baseRaioLado) * (3 **(1/2)))/4 
+                }
+
+                console.log("Area " + area);
+                document.getElementById("idOut").value = "Area: " + area
+            }
+
+
+            function escolherFormaGeo() {
+                const opCirculo = document.getElementById("idCirculo").checked
+                const opRetangulo = document.getElementById("idRetangulo").checked
+                const opTriRetangulo = document.getElementById("idTriRetangulo").checked
+                const opTriEquilatero = document.getElementById("idTriEquilatero").checked
+
+                
+                if (opCirculo) {
+                    document.getElementById("idLbMedidaSeq").hidden = true
+                    document.getElementById("idMedidaSeq").hidden = true
 
                     document.getElementById("idLbMedidaBase").innerText = "Raio"
                 } else if (opRetangulo) {
-                    
-                } else if (opTrianReta) {
+                    document.getElementById("idLbMedidaSeq").hidden = false
+                    document.getElementById("idMedidaSeq").hidden = false
+
+                    document.getElementById("idLbMedidaBase").innerText = "Base"
+                    document.getElementById("idLbMedidaSeq").innerText = "Altura"
+
+                } else if (opTriRetangulo) {
+                    document.getElementById("idLbMedidaSeq").hidden = false
+                    document.getElementById("idMedidaSeq").hidden = false
+
+                    document.getElementById("idLbMedidaBase").innerText = "Base"
+                    document.getElementById("idLbMedidaSeq").innerText = "Altura"
                     
                 } else if (opTriEquilatero) {
-                    document.getElementById("idLbMedidaSeq").disabled = true
-                    document.getElementById("idMedidaSeq").disabled = true
+                    document.getElementById("idLbMedidaSeq").hidden = true
+                    document.getElementById("idMedidaSeq").hidden = true
 
                     document.getElementById("idLbMedidaBase").innerText = "Lado"
+                    document.getElementById("idLbMedidaSeq").innerText = "Altura"
                 }
-
 
 
             }
 
-
-
-
-
-
-
-
-            function calcular(){
-                const opCirculo = document.getElementById("idCirculo").checked
-                const opRetangulo = document.getElementById("idRetangulo").checked
-                const opTrianReta = document.getElementById("idTrianReta").checked
-                const opTriEquilatero = document.getElementById("idTriEquilatero").checked
-              
-                var resultado
-                if (rdRetangulo) {
-                   resultado = param1 * param2
-                } else if (rdCirculo) {
-                    resultado = 3.14 * (param1**2)
-                } else if (rdTrianguloRetangulo) {
-                    resultado = ((param1 * param2) / 2)
-                } else if (rdQuadrado) {
-                   resultado = param1** 2
-                }
-                document.getElementById("idOut").value = resultado
-                
-            }
         </script>
-
         
 
 
