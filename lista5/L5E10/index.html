@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>E5l9</title>
+    </head>
+
+    <body>
+        
+        <form action="">
+            <!--
+            <label for="idSelect"></label>
+            <select name="nmSelect" id="idSelect">
+                <option value="$A">Dolar Americano</option>
+                <option value="L">Libra</option>
+                <option value="R$">Real</option>
+                <option value="$C">Dolar Canadense</option>
+                <option value="EU">Euro</option>
+            </select>
+            
+            <label for="idSelect"></label>
+            <select name="nmSelect" id="idSelect">
+                <option value="DOL">Dolar Americano</option>
+                <option value="LIB">Libra</option>
+                <option value="RS">Real</option>
+                <option value="DoC">Dolar Canadense</option>
+                <option value="EUR">Euro</option>
+            </select>
+            <br><br>
+            -->
+            <input type="number" id="idValorMoeda" name="nmValorMoeda" step="0.01" placeholder="Digite o valor"><br>
+            <label for="nmMoeda1">SELECIONE A MOEDA QUE VOCE INFORMOU O VALOR</label><br>
+            
+            <input type="radio" name="nmMoeda1" id="idReal" checked>
+            <label for="idReal">Real</label>
+            
+            <input type="radio" name="nmMoeda1" id="idDolar">
+            <label for="idDolar">Dólar Americano</label>
+            
+            <input type="radio" name="nmMoeda1" id="idDolarC">
+            <label for="idDolarC">Dólar Canadense</label>
+            
+            <input type="radio" name="nmMoeda1" id="idEuro">
+            <label for="idEuro">Euro</label>
+
+            <input type="radio" name="nmMoeda1" id="idLibra">
+            <label for="idLibra">Libra Esterlina</label>
+            <br><br>   
+            <label for="nmMoeda2">SELECIONE A MOEDA QUE PARA QUAL VOCÊ DESEJA CONVERTER</label><br>
+            <input type="radio" name="nmMoeda2" id="idReal2" checked>
+            <label for="idReal2">Real</label>
+            
+            <input type="radio" name="nmMoeda2" id="idDolar2">
+            <label for="idDolar2">Dólar Americano</label>
+            
+            <input type="radio" name="nmMoeda2" id="idDolarC2">
+            <label for="idDolarC2">Dólar Canadense</label>
+            
+            <input type="radio" name="nmMoeda2" id="idEuro2">
+            <label for="idEuro2">Euro</label>
+
+            <input type="radio" name="nmMoeda2" id="idLibra2">
+            <label for="idLibra2">Libra Esterlina</label>
+            <br><br>   
+                     
+            <input type="text" id="idValorConv" name="nmValorConv" step="0.01" placeholder="Valor moeda convertida">
+            <BR></BR>
+
+            <output id="idOut"></output>
+            <br><br>
+            
+            <input type="button" value="Calcular" onclick="converter()">
+            
+        </form>
+
+        <script>
+
+            function converter() {
+
+                const opReal = document.getElementById("idReal").checked
+                const opDolar = document.getElementById("idDolar").checked
+                const opDolarC = document.getElementById("idDolarC").checked
+                const opEuro = document.getElementById("idEuro").checked
+                const opLibra = document.getElementById("idLibra").checked
+                const opReal2 = document.getElementById("idReal2").checked
+                const opDolar2 = document.getElementById("idDolar2").checked
+                const opDolarC2 = document.getElementById("idDolarC2").checked
+                const opEuro2 = document.getElementById("idEuro2").checked
+                const opLibra2 = document.getElementById("idLibra2").checked
+                let cotDolarReal = 4.73
+                let cotDolarDolarC = 1.27
+                let cotDolarEuro = 0.93
+                let cotDolarLibra = 0.79
+                
+
+                const valorMoeda = Number(document.getElementById("idValorMoeda").value)
+                let real
+                let dolar
+                let euro
+                let libra
+                let dolarcanadense
+                //real
+                if (opReal  && opReal2) {
+                    real = valorMoeda
+
+                    document.getElementById("idValorConv").value = "R$ " + real
+                    
+                } else if (opReal  && opDolar2) {
+                    real = (valorMoeda / cotDolarReal).toFixed(2)
+
+                    document.getElementById("idValorConv").value = "$ " + real
+                } else if (opReal  && opDolarC2) {
+                    real = (valorMoeda / cotDolarReal * cotDolarDolarC ).toFixed(2)
+
+                    document.getElementById("idValorConv").value = "$ " + real
+                } else if (opReal  && opEuro2) {
+                    real = (valorMoeda /cotDolarReal * cotDolarEuro).toFixed(2)
+
+                    document.getElementById("idValorConv").value = "€ " + real
+                } else if (opReal  && opLibra2) {
+                    real = (valorMoeda / cotDolarReal * cotDolarLibra).toFixed(2)
+
+                    document.getElementById("idValorConv").value = "£ " +  real
+                    //dolar americano
+                } else if (opDolar  && opDolar2) {
+                    dolar = valorMoeda
+
+                    document.getElementById("idValorConv").value = "$ " + dolar
+                } else if (opDolar  && opReal2) {
+                    dolar = (valorMoeda * cotDolarReal).toFixed(2)
+
+                    document.getElementById("idValorConv").value = "R$ " + dolar
+                } else if (opDolar  && opDolarC2) {
+                    dolar = (valorMoeda * cotDolarDolarC).toFixed(2)
+
+                    document.getElementById("idValorConv").value = "$ " + dolar
+                } else if (opDolar  && opEuro2) {
+                    dolar = (valorMoeda * cotDolarEuro).toFixed(2)
+
+                    document.getElementById("idValorConv").value = "€ " +  dolar
+                } else if (opDolar && opLibra2) {
+                    dolar = (valorMoeda * cotDolarLibra).toFixed(2)
+
+                    document.getElementById("idValorConv").value = "£ " +  dolar
+                    //dolar canadense
+                } else if (opDolarC  && opDolarC2) {
+                   dolarcanadense = valorMoeda
+
+                    document.getElementById("idValorConv").value = "$ " + dolarcanadense
+                } else if (opDolarC  && opReal2) {
+                    dolarcanadense = (valorMoeda / cotDolarDolarC * cotDolarReal ).toFixed(2)
+
+                    document.getElementById("idValorConv").value = "R$ " + dolarcanadense
+                } else if (opDolarC  && opDolar2) {
+                    dolarcanadense = (valorMoeda / cotDolarDolarC).toFixed(2)
+
+                    document.getElementById("idValorConv").value = "$ " + dolarcanadense
+                } else if (opDolarC  && opEuro2) {
+                    dolarcanadense = (valorMoeda / cotDolarDolarC * cotDolarEuro).toFixed(2)
+
+                    document.getElementById("idValorConv").value = "€ " +  dolarcanadense
+                } else if (opDolarC && opLibra2) {
+                    dolarcanadense = (valorMoeda / cotDolarDolarC * cotDolarLibra).toFixed(2)
+
+                    document.getElementById("idValorConv").value = "£ " +  dolarcanadense
+                    //euro
+                } else if (opEuro  && opEuro2) {
+                    euro = valorMoeda
+
+                    document.getElementById("idValorConv").value = "€ " + euro
+                } else if (opEuro  && opReal2) {
+                    euro = (valorMoeda / cotDolarEuro * cotDolarReal ).toFixed(2)
+
+                    document.getElementById("idValorConv").value = "R$ " + euro
+                } else if (opEuro  && opDolar2) {
+                    euro = (valorMoeda / cotDolarEuro).toFixed(2)
+
+                    document.getElementById("idValorConv").value = "$ " + euro
+                } else if (opEuro  && opDolarC2) {
+                    euro = (valorMoeda / cotDolarEuro * cotDolarDolarC).toFixed(2)
+
+                    document.getElementById("idValorConv").value = "$ " +  euro
+                } else if (opEuro && opLibra2) {
+                    euro = (valorMoeda / cotDolarEuro * cotDolarLibra).toFixed(2)
+
+                    document.getElementById("idValorConv").value = "£ " +  euro
+                    //libra
+                } else if (opLibra  && opLibra2) {
+                    libra = valorMoeda
+
+                    document.getElementById("idValorConv").value = "£ " + libra
+                } else if (opLibra  && opReal2) {
+                    libra = (valorMoeda / cotDolarLibra * cotDolarReal ).toFixed(2)
+
+                    document.getElementById("idValorConv").value = "R$ " + libra
+                } else if (opLibra  && opDolar2) {
+                    libra = (valorMoeda / cotDolarLibra).toFixed(2)
+
+                    document.getElementById("idValorConv").value = "$ " + libra
+                } else if (opLibra  && opDolarC2) {
+                    libra = (valorMoeda / cotDolarLibra * cotDolarDolarC).toFixed(2)
+
+                    document.getElementById("idValorConv").value = "$ " +  libra
+                } else if (opLibra && opEuro2) {
+                    libra = (valorMoeda / cotDolarLibra * cotDolarEuro).toFixed(2)
+
+                    document.getElementById("idValorConv").value = "€ " +  libra
+                }
+               
+            }
+
+        </script>   
+    
+    </body>
+</html>
