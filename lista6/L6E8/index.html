@@ -1,66 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
+
+        <head>
+            <meta charset="UTF-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>L6E7</title>
-    </head>
-    <body>
-        
+        </head>
+
+        <body>
+
             <form action="">
 
                 <label for="idLbNum">Digite o numero</label><br>
                 <input type="number" name="nmNum" id="idNum">
                 <br><br>
-                
+
                 <input type="button" value="Enviar" onclick="enviar()">
-                <input type="button" value="mostrar" onclick="mostrar()">
-                <label for="idContArray">Conteudo do Array:</label><br>
+                <input type="button" value="mostrar" onclick="mostrar()"><br>
+                <label for="idLbContArray">Conteudo do Array:</label><br>
                 <textarea name="nmContArray" id="idContArray" cols="30" rows="10"></textarea>
 
             </form>
 
 
-                   
 
-        <script>
+
+            <script>
 
                 var numeros = []
-
+                var cont = 0
+                var multiDez = 0
 
                 function enviar() {
-                    
-                
-                let num =  Number(document.getElementById("idNum").value)       
-                    
-                        numeros.push(num)
-                        console.table(numeros)
-                    
+
+
+                    let num = Number(document.getElementById("idNum").value)
+
+                    numeros.push(num)
+                    console.table(numeros)
+                    document.getElementById("idNum").value = ""
                 }
 
 
                 function mostrar() {
-                    let cont = 0
-                    let div10 = " "
-                for (let index = 0; index < numeros.length; index++) {
-                   
-                    if ((num % 2) == 0 ) {
-                    div10 = div10 + cont + " "
-                    cont++ 
-                    }
-                   
-                   
+                    
+                    
+                    for (let index = 0; index < numeros.length; index++) {
+                        (numeros[index])
+                        if ((numeros[index]% 10) == 0) {
+                           multiDez = multiDez + index + " , "
+                  
+                        }
+                    
+
+                    console.table(numeros)
+                    document.getElementById("idContArray").value = "numeros do array: " + numeros + " Os numeros multipos de dez estão nas posições:  " + multiDez
                 }
-                console.table(numeros)
-                document.getElementById("idContArray").value = cont
-               
-                }
-                                    
-                
-            
-        </script>
-             
-    
-    </body>
+
+            }
+
+
+
+            </script>
+
+        
+         
+
+
+
+
+
+
+
+        </body>
+
 </html>

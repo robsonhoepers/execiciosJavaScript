@@ -7,71 +7,77 @@
             <title>L5E3</title>
         </head>
         <body>
-               
             <form action="">
-
-                <label for="idIdade">Idade:</label><br>
-                <input type="number" id="idIdade" name="nmIdade">
+                <label for="idNumeroApostado">Aposte um Número:</label><br>
+                <input type="number" id="idNumeroApostado" name="nmNumeroApostadoe">
                 <br><br>
-                <label for="idOutMediaIdades"> Méida de Idade:</label>                
-                <output id="idOutMediaIdades"></output>
-                <br>
-                <label for="idOutQtdPessoasMaior18">Qntd Pessoas Maior 18:</label>                
-                <output id="idOutQtdPessoasMaior18"></output>
-                <br>
-                <label for="idOutQtdPessoasMenor5">Qntd Pessoas Menor de 5</label>                
-                <output id="idOutQtdPessoasMenor5"></output><br>
-
-                <label for="idOutMaiorIdade">Maior Idade: </label>                
-                <output id="idOutMaiorIdade"></output>
+                <input type="button" value="Enviar" onclick="enviar()">
                 <br><br>
-                <input type="button" value="Ler Idade" onclick="lerIdade()">
-                <input type="button" value="relatorio" onclick="relatorio()">
+                <label for="idOutMensagem">Resultado: </label>
+                <output id="idOutMensagem"></output>
+                <br>
             </form>
-    
+        
             <script>
-                   
-                    var mediaIdade = 0
-                    var contMaiorDezoito = 0
-                    var contMenorCinco = 0
-                    var maiorIdade = -1
-                    var contIdade = 0
-                
-                    function lerIdade() {
-                    
-                    
-                    let idade = Number(document.getElementById("idIdade").value)
-                                       
-                                     
-                    
-                                        
-                        if (idade < 5) {
-                            contMenorCinco++
-                        }
-                        if (idade > 18) {
-                            contMaiorDezoito++
-                        }
-                        
-                    
-                        if (idade > maiorIdade) {
-                        maiorIdade = idade
-                    }
-                    }   
-                    console.log("Idade Lida " + idade);
-                    console.log("Idade Maior 18 " + contMaiorDezoito);
-                    console.log("numeros Menor 5: " + contMenorCinco)
-                    console.log("Média Idade: " + mediaIdade)
-                    console.log("Maior Idade: " + maiorIdade)
-                   
-                    
-               
-                
-                function relatorio(){
-                                  
-                document.getElementById("idOut").value = "Menor Preco: " + menorPreco + " Maior Preco " + maiorPreco
-    
+                //- sortear um número assim que carregar a tela (escopo global)
+                var numeroSorteado = parseInt(Math.random() * 11)
+                if (numeroSorteado == 0) {
+                    numeroSorteado = 1
                 }
-             
+                console.log(numeroSorteado);
+        
+                var tentativa = 3
+                var msnSaida = document.getElementById("idOutMensagem")
+        
+                function enviar() {
+        
+        
+                    //- adquirir o número digitado 
+                    let numeroApostado = Number(document.getElementById("idNumeroApostado").value)
+                    //- somar a tentativa do jogador (tentativa++)
+                    tentativa--
+                    //- testar se a quantidade de tentativas é superior a 3, se for dar saída fim de jogo (jogo perdido)
+                    if (tentativa !=0) {
+                //- descobrir se o número digitado é igual ao número sorteado, dar saída de acordo com as regras abaixo 
+                //    - "Vc Venceu!" se o numeroSorteado == numeroDigitado
+                //    - "O Apostado é menor que sorteado" se o numeroSorteado > numeroDigitado
+                //    - "O Apostado é maior que sorteado" se o numeroSort
+                        if (numeroApostado < numeroSorteado) {
+                            msnSaida.value = "O número apostado é menor que sorteado"
+                        } else if (numeroApostado > numeroSorteado) {
+                            msnSaida.value = "O número apostado é maior que sorteado"
+                        } else if (numeroApostado == numeroSorteado) {
+                            msnSaida.value = "Parabéns vc acertou!"
+                        }
+                    } else {
+                        msnSaida.value = "Jogo encerrado, você perdeu, mais sorte da próxima vez!"
+                    }
+                }
+            
+                
+                /*
+                    entradas: 
+                    - numero digitado/tentativa do jogador (1 input)
+        
+                    processamento: 
+                    - sortear um número assim que carregar a tela (escopo global)
+                    - adquirir o número digitado 
+                    - somar a tentativa do jogador (tentativa++)
+                    - testar se a quantidade de tentativas é superior a 3, se for dar saída fim de jogo (jogo perdido)
+                    - descobrir se o número digitado é igual ao número sorteado, dar saída de acordo com as regras abaixo 
+                        - "Vc Venceu!" se o numeroSorteado == numeroDigitado
+                        - "O Apostado é menor que sorteado" se o numeroSorteado > numeroDigitado
+                        - "O Apostado é maior que sorteado" se o numeroSorteado < numeroDigitado
+        
+                    saídas: 
+                    se numero de tentativas <= 3 entao 
+                        - mensagem informando se o número jogado é igual ao número sorteado ou se maior ou se é menor
+                    senao 
+                        - mensagem jogo perdido "Jogo encerrado, você perdeu, mais sorte da próxima vez!"
+                    fim-se 
+                */
             </script>
+        
+        
         </body>
 </html>

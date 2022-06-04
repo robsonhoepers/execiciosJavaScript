@@ -104,93 +104,93 @@
                     real = (valorMoeda / cotDolarReal * cotDolarLibra).toFixed(2)
 
                     document.getElementById("idValorConv").value = "£ " +  real
-                    //dolar americano
-                } else if (opDolar  && opDolar2) {
-                    dolar = valorMoeda
+                //dolar americano
+                    } else if (opDolar  && opDolar2) {
+                        dolar = valorMoeda
 
-                    document.getElementById("idValorConv").value = "$ " + dolar
-                } else if (opDolar  && opReal2) {
-                    dolar = (valorMoeda * cotDolarReal).toFixed(2)
+                        document.getElementById("idValorConv").value = "$ " + dolar
+                    } else if (opDolar  && opReal2) {
+                        dolar = (valorMoeda * cotDolarReal).toFixed(2)
 
-                    document.getElementById("idValorConv").value = "R$ " + dolar
-                } else if (opDolar  && opDolarC2) {
-                    dolar = (valorMoeda * cotDolarDolarC).toFixed(2)
+                        document.getElementById("idValorConv").value = "R$ " + dolar
+                    } else if (opDolar  && opDolarC2) {
+                        dolar = (valorMoeda * cotDolarDolarC).toFixed(2)
 
-                    document.getElementById("idValorConv").value = "$ " + dolar
-                } else if (opDolar  && opEuro2) {
-                    dolar = (valorMoeda * cotDolarEuro).toFixed(2)
+                        document.getElementById("idValorConv").value = "$ " + dolar
+                    } else if (opDolar  && opEuro2) {
+                        dolar = (valorMoeda * cotDolarEuro).toFixed(2)
 
-                    document.getElementById("idValorConv").value = "€ " +  dolar
-                } else if (opDolar && opLibra2) {
-                    dolar = (valorMoeda * cotDolarLibra).toFixed(2)
+                        document.getElementById("idValorConv").value = "€ " +  dolar
+                    } else if (opDolar && opLibra2) {
+                        dolar = (valorMoeda * cotDolarLibra).toFixed(2)
 
-                    document.getElementById("idValorConv").value = "£ " +  dolar
+                        document.getElementById("idValorConv").value = "£ " +  dolar
                     //dolar canadense
-                } else if (opDolarC  && opDolarC2) {
-                   dolarcanadense = valorMoeda
+                        } else if (opDolarC  && opDolarC2) {
+                        dolarcanadense = valorMoeda
 
-                    document.getElementById("idValorConv").value = "$ " + dolarcanadense
-                } else if (opDolarC  && opReal2) {
-                    dolarcanadense = (valorMoeda / cotDolarDolarC * cotDolarReal ).toFixed(2)
+                            document.getElementById("idValorConv").value = "$ " + dolarcanadense
+                        } else if (opDolarC  && opReal2) {
+                            dolarcanadense = (valorMoeda / cotDolarDolarC * cotDolarReal ).toFixed(2)
 
-                    document.getElementById("idValorConv").value = "R$ " + dolarcanadense
-                } else if (opDolarC  && opDolar2) {
-                    dolarcanadense = (valorMoeda / cotDolarDolarC).toFixed(2)
+                            document.getElementById("idValorConv").value = "R$ " + dolarcanadense
+                        } else if (opDolarC  && opDolar2) {
+                            dolarcanadense = (valorMoeda / cotDolarDolarC).toFixed(2)
 
-                    document.getElementById("idValorConv").value = "$ " + dolarcanadense
-                } else if (opDolarC  && opEuro2) {
-                    dolarcanadense = (valorMoeda / cotDolarDolarC * cotDolarEuro).toFixed(2)
+                            document.getElementById("idValorConv").value = "$ " + dolarcanadense
+                        } else if (opDolarC  && opEuro2) {
+                            dolarcanadense = (valorMoeda / cotDolarDolarC * cotDolarEuro).toFixed(2)
 
-                    document.getElementById("idValorConv").value = "€ " +  dolarcanadense
-                } else if (opDolarC && opLibra2) {
-                    dolarcanadense = (valorMoeda / cotDolarDolarC * cotDolarLibra).toFixed(2)
+                            document.getElementById("idValorConv").value = "€ " +  dolarcanadense
+                        } else if (opDolarC && opLibra2) {
+                            dolarcanadense = (valorMoeda / cotDolarDolarC * cotDolarLibra).toFixed(2)
 
-                    document.getElementById("idValorConv").value = "£ " +  dolarcanadense
-                    //euro
-                } else if (opEuro  && opEuro2) {
-                    euro = valorMoeda
+                            document.getElementById("idValorConv").value = "£ " +  dolarcanadense
+                        //euro
+                            } else if (opEuro  && opEuro2) {
+                                euro = valorMoeda
 
-                    document.getElementById("idValorConv").value = "€ " + euro
-                } else if (opEuro  && opReal2) {
-                    euro = (valorMoeda / cotDolarEuro * cotDolarReal ).toFixed(2)
+                                document.getElementById("idValorConv").value = "€ " + euro
+                            } else if (opEuro  && opReal2) {
+                                euro = (valorMoeda / cotDolarEuro * cotDolarReal ).toFixed(2)
 
-                    document.getElementById("idValorConv").value = "R$ " + euro
-                } else if (opEuro  && opDolar2) {
-                    euro = (valorMoeda / cotDolarEuro).toFixed(2)
+                                document.getElementById("idValorConv").value = "R$ " + euro
+                            } else if (opEuro  && opDolar2) {
+                                euro = (valorMoeda / cotDolarEuro).toFixed(2)
 
-                    document.getElementById("idValorConv").value = "$ " + euro
-                } else if (opEuro  && opDolarC2) {
-                    euro = (valorMoeda / cotDolarEuro * cotDolarDolarC).toFixed(2)
+                                document.getElementById("idValorConv").value = "$ " + euro
+                            } else if (opEuro  && opDolarC2) {
+                                euro = (valorMoeda / cotDolarEuro * cotDolarDolarC).toFixed(2)
 
-                    document.getElementById("idValorConv").value = "$ " +  euro
-                } else if (opEuro && opLibra2) {
-                    euro = (valorMoeda / cotDolarEuro * cotDolarLibra).toFixed(2)
+                                document.getElementById("idValorConv").value = "$ " +  euro
+                            } else if (opEuro && opLibra2) {
+                                euro = (valorMoeda / cotDolarEuro * cotDolarLibra).toFixed(2)
 
-                    document.getElementById("idValorConv").value = "£ " +  euro
-                    //libra
-                } else if (opLibra  && opLibra2) {
-                    libra = valorMoeda
+                                document.getElementById("idValorConv").value = "£ " +  euro
+                             //libra
+                                } else if (opLibra  && opLibra2) {
+                                    libra = valorMoeda
 
-                    document.getElementById("idValorConv").value = "£ " + libra
-                } else if (opLibra  && opReal2) {
-                    libra = (valorMoeda / cotDolarLibra * cotDolarReal ).toFixed(2)
+                                    document.getElementById("idValorConv").value = "£ " + libra
+                                } else if (opLibra  && opReal2) {
+                                    libra = (valorMoeda / cotDolarLibra * cotDolarReal ).toFixed(2)
 
-                    document.getElementById("idValorConv").value = "R$ " + libra
-                } else if (opLibra  && opDolar2) {
-                    libra = (valorMoeda / cotDolarLibra).toFixed(2)
+                                    document.getElementById("idValorConv").value = "R$ " + libra
+                                } else if (opLibra  && opDolar2) {
+                                    libra = (valorMoeda / cotDolarLibra).toFixed(2)
 
-                    document.getElementById("idValorConv").value = "$ " + libra
-                } else if (opLibra  && opDolarC2) {
-                    libra = (valorMoeda / cotDolarLibra * cotDolarDolarC).toFixed(2)
+                                    document.getElementById("idValorConv").value = "$ " + libra
+                                } else if (opLibra  && opDolarC2) {
+                                    libra = (valorMoeda / cotDolarLibra * cotDolarDolarC).toFixed(2)
 
-                    document.getElementById("idValorConv").value = "$ " +  libra
-                } else if (opLibra && opEuro2) {
-                    libra = (valorMoeda / cotDolarLibra * cotDolarEuro).toFixed(2)
+                                    document.getElementById("idValorConv").value = "$ " +  libra
+                                } else if (opLibra && opEuro2) {
+                                    libra = (valorMoeda / cotDolarLibra * cotDolarEuro).toFixed(2)
 
-                    document.getElementById("idValorConv").value = "€ " +  libra
-                }
-               
-            }
+                                    document.getElementById("idValorConv").value = "€ " +  libra
+                                }
+                            
+                            }
 
         </script>   
     

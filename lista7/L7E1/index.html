@@ -9,16 +9,22 @@
         <body>
             <form action="">
 
-                <label for="idLbNotas">Notas</label><br>
-                <input type="number" name="nmNotas" id="idNotas">
+                <label for="idLbNota">Notas</label><br>
+                <input type="number" name="nmNota" id="idNota" step="0.01">
                 <br><br>
                 
                 <input type="button" value="Enviar" onclick="enviar()">
-                <input type="button" value="Inverter" onclick="relatorio()">
-                <label for="idContArray">Relatorio de Notas</label><br>
-                <textarea name="nmContArray" id="idContArray" cols="30" rows="10"></textarea>
-
+                <input type="button" value="Questão A" onclick="questaoA()">
+                <input type="button" value="Questão B" onclick="questaoB()">
+                <input type="button" value="Questão C" onclick="questaoC()">
+                <input type="button" value="Questão D" onclick="questaoD()">
+                
+                <output id="OutA"></output><br>
+                <output id="OutB"></output><br>
+                <output id="OutC"></output><br>
+                <output id="OutD"></output><br>
             </form>
+
 
 
                    
@@ -31,29 +37,63 @@
                 function enviar() {
                     
                 
-                let notasadd = document.getElementById("idNotas").value       
-                                    
-                    notas.push(notasadd)
-                    console.table(names)
+                notas.push(Number(document.getElementById("idNota").value))                    
+                    
+                console.table(names)
                     
                 }
 
+                /* usando for.Each
+                function questaoA() {
+                    let saida = document.getElementById("idOutA")
+                    let somaNotas = 0
+                    let media = 0
 
-                function relatorio() {
-                var media
-                var acimaMedia    
-                var relatorio    
-                 for (let index = 0; index < names.length; index++) {
-                    
-                    if (condition) {
+                    notas.forEach(element => {
+                        somaNotas = somaNotas + element
                         
-                    }
-                    
-                   
+                    });
+                    media = somaNotas / notas.length
+                    saida.value = "Média da Turma " + media
                 }
-                console.table(inverter)
-                document.getElementById("idContArray").value = inverter
-               
+                */
+
+                function questaoA() {
+                    console.log(notas)
+                    let saida = document.getElementById("idOutA")
+                    
+                    let media = (notas.reduce(function(acumulador, elemento, index, array){
+                        return acumulador = acumulador + elemento
+                    })) / notas.length
+                }
+
+
+
+                function questaoB() {
+                    let saida = document.getElementById("idOutB")
+                }
+
+                function questaoC() {
+                    let saida = document.getElementById("idOutC")
+                    let maior = 0
+
+                    notas.array.forEach(element => {
+                       if (element > maior) {
+                           maior = element
+                       }
+                   });
+                   saida.value = "A maior nota é: " + maior
+                   return maior
+                }
+                
+                function questaoD() {
+                    let saida = document.getElementById("idOutD")
+                    let indMaiorNota = notas.filter(maiorNota)
+                    
+                    function maiorNota(elemento) {
+                        return elemento == maior
+                    }
+                    saida.value = "A posição da maior nota é: " + maior
                 }
                                     
                 
