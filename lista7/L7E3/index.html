@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="style.css">
+            <title>Relatório de Notas</title>
+        </head>
+        <body>
+            <div id="titulo">
+                <h1>Relatório de nomes e salario</h1>
+            </div>
+
+            <form action="">
+                <div class="input">
+                    <div>
+                        <label for="idLbNomes">Nome do Funcionário</label>
+                        <input type="text" name="nmNomes" id="idNomes">
+                    </div>
+                    
+                    <div>
+                        <label for="idLbSalario">Salário</label>
+                        <input type="number" name="nmSalario" id="idSalario" step="0.01">
+                    </div>
+                </div>
+
+                <div class="AreaResultado">
+                    <textarea id="idResultado" name="nmResultado" cols="30" rows="10" readonly></textarea>
+                </div>
+
+                <div class="radioaButton">
+                    <div>
+                        <label for="idLbGenero">Selecione o Genero</label>
+                    </div>
+                    
+                    <input type="radio" name="nmGenero" id="idFem" checked>
+                    <label for="idLbFem">Feminino</label>
+                    
+                    <input type="radio" name="nmGenero" id="idMasc">
+                    <label for="idLbMasc">Masculino</label>
+                </div>
+
+                <div class="caixaBotoes">
+                    <div class="botao">
+                        <input type="button" id="idCapturarDados" value="Capturar Dados" onclick="capturarelementos()"> 
+                    </div>
+                    <div class="botao">                 
+                        <input type="button" value="Relatório" onclick="executar()">
+                    </div>
+                </div>
+
+
+        <script>
+
+                var salario = []
+                var genero = []
+                var names = []
+                var posicaomenoridade = []
+                var listaAuxNomes = [];
+                var listaAuxIdades = [];
+                var saida = document.getElementById("idResultado")
+
+                function capturarelementos() {
+               
+                //captura e incrementa no array as salario digitadas
+                salario.push(Number(document.getElementById("idIdades").value))                   
+                feminino = document.getElementById("idFem").checked
+                masculino = document.getElementById("idMasc").checked
+
+                names.push(document.getElementById("idNomes").value)//captura e incrementa os nomes digitados           
+                console.table(salario)//mostra no console as salario dentro do array
+                console.table(names) //mostra no console os nomes dentro do array
+                document.getElementById("idIdades").value = ""; //deixa caixa de digitação vazia
+                document.getElementById("idNomes").value = ""; //deixa caixa de digitação vazia
+                if (salario.length == 9 && names.length == 9) {
+                    document.getElementById("idCapturarDados").disabled = true
+                }
+                }
+
+               
+                function executar(){
+                for (let i = 0; i < salario.length; i++){
+                    if (salario[i] < 18){
+                        listaAuxIdades.push(salario[i])
+                        posicaomenoridade.push(i)                            
+                    }
+
+                }
+                for(let index = 0; index < names.length; index++){
+                    for(let i = 0; i < posicaomenoridade.length; i++){
+                        if (index == posicaomenoridade[i]){
+                            listaAuxNomes.push(names[index])
+                        }
+                    }                           
+                }
+                console.log(posicaomenoridade)
+                console.log(listaAuxNomes)
+                console.log(listaAuxIdades)
+
+                saida.value = "Nome: " + listaNomes  +  " Idade: " + listaIdades
+            }              
+        </script>
+        </body>
+</html>

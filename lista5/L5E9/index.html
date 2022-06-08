@@ -4,31 +4,36 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
         <title>E5l9</title>
     </head>
 
     <body>
-        
-        <form action="">
-            <input type="radio" name="nmTemperatura" id="idTKelvin" checked>
-            <label for="idTKelvin">Kelvin</label>
-            <br>
-            <input type="radio" name="nmTemperatura" id="idTCelsius">
-            <label for="idTCelsius">Celsius</label>
-            <br>
-            <input type="radio" name="nmTemperatura" id="idTFahrenheit">
-            <label for="idTFahrenheit">Fahrenheit</label>
-            <br>
-            <label for="idValorTemp" id="idLbValorTemp" >Temperatura </label><br>
-            <input type="number" id="idValorTemp" name="nmValorTemp" step="0.01">
-            <br><br>
-            <output id="idOut">Valor :</output>
-            <br><br>
-            
-            <input type="button" value="Calcular" onclick="converter()">
-
-        </form>
-
+        <div class="Formulario">
+            <form action="">
+                <div class="inputRadio">
+                    <input type="radio" name="nmTemperatura" id="idTKelvin" checked>
+                    <label for="idTKelvin">Kelvin</label>
+               
+                    <input type="radio" name="nmTemperatura" id="idTCelsius">
+                    <label for="idTCelsius">Celsius</label>
+               
+                    <input type="radio" name="nmTemperatura" id="idTFahrenheit">
+                    <label for="idTFahrenheit">Fahrenheit</label>
+                </div>
+                <div class="inputNumber">
+                    <label for="idValorTemp" id="idLbValorTemp">Temperatura</label>
+                    <input type="number" id="idValorTemp" name="nmValorTemp" step="0.01">
+                </div>
+                <div>
+                    <output id="idOut">Valor:</output>
+                </div>
+                <div>
+                    <input type="button" value="Calcular" onclick="converter()">
+                </div>
+       
+            </form>
+        </div>
         <script>
 
             function converter() {

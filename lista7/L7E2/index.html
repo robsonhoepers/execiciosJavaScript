@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="style.css">
+            <title>Relatório de Notas</title>
+        </head>
+        <body>
+            <div id="idDivFundo" class="clFundo">
+                <div id="titulo">
+                    <h1>Relatório de nomes e idades</h1>
+                </div>
+
+            <form action="">
+                <div class="clInput">
+                    <div>
+                        <label for="idLbNomes">Digite o nome</label>
+                        <input type="text" name="nmNomes" id="idNomes">
+                    </div>
+                    
+                    <div>
+                        <label for="idLbIdades">Informe a Idades</label>
+                        <input type="number" name="nmIdades" id="idIdades">
+                    </div>
+                </div>
+                <div class="clDisplayResultado">
+                    <textarea id="idResultado" name="nmResultado"
+                        cols="30" rows="10" readonly>
+                    </textarea>
+                </div>
+                <div class="clcaixaBotoes">
+                    <div class="clbotao">
+                        <input type="button" id="idCapturarDados" value="Capturar Dados" 
+                        onclick="capturarelementos()"> 
+                    </div>
+                    <div class="clbotao">
+                        <button class="clBotao" onclick="memoryClear()">Relatório</button>               
+                        <input type="button" value="Relatório" onclick="executar()">
+                    </div>
+                </div>
+            </div>
+        <script>
+
+                var idades = []
+                var names = []
+                var posicaomenoridade = []
+                var listaAuxNomes = [];
+                var listaAuxIdades = [];
+                var saida = document.getElementById("idResultado")
+
+                function capturarelementos() {
+               
+                //captura e incrementa no array as idades digitadas
+                idades.push(Number(document.getElementById("idIdades").value))                   
+                names.push(document.getElementById("idNomes").value)//captura e incrementa os nomes digitados           
+                console.table(idades)//mostra no console as idades dentro do array
+                console.table(names) //mostra no console os nomes dentro do array
+                document.getElementById("idIdades").value = ""; //deixa caixa de digitação vazia
+                document.getElementById("idNomes").value = ""; //deixa caixa de digitação vazia
+                if (idades.length == 9 && names.length == 9) {
+                    document.getElementById("idCapturarDados").disabled = true
+                }
+                }
+
+               
+                function executar(){
+                for (let i = 0; i < idades.length; i++){
+                    if (idades[i] < 18){
+                        listaAuxIdades.push(idades[i])
+                        posicaomenoridade.push(i)                            
+                    }
+
+                }
+                for(let index = 0; index < names.length; index++){
+                    for(let i = 0; i < posicaomenoridade.length; i++){
+                        if (index == posicaomenoridade[i]){
+                            listaAuxNomes.push(names[index])
+                        }
+                    }                           
+                }
+                console.log(posicaomenoridade)
+                console.log(listaAuxNomes)
+                console.log(listaAuxIdades)
+
+                saida.value = "Nome: " + listaNomes  +  " Idade: " + listaIdades
+            }              
+        </script>
+        
+        </body>
+</html>

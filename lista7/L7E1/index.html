@@ -38,7 +38,7 @@
                     
                 
                 notas.push(Number(document.getElementById("idNota").value))                    
-                    
+                document.getElementById("idNota").value = "";
                 console.table(names)
                     
                 }
@@ -57,7 +57,7 @@
                     saida.value = "Média da Turma " + media
                 }
                 */
-
+                //usando reduce
                 function questaoA() {
                     console.log(notas)
                     let saida = document.getElementById("idOutA")
