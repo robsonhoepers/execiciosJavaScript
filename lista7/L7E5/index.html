@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Document</title>
+        </head>
+        <body>
+            <div id="idDivFundo" class="clFundo">
+                <div id="titulo">
+                    <h1>Relatório de Temperaturas</h1>
+                </div>
+
+            <form action="">
+                <div class="clInput">
+                                        
+                    <div>
+                       
+                        <input type="number" name="nmNum" id="idNum" placeholder="Digite um numero">
+                    </div>
+                   
+
+                </div>
+
+                <div class="clCaixaBotoes">
+                    <div class="clbotao">
+                        <input type="button" id="idCapturarDados" value="Capturar Dados"> 
+                    </div>
+
+                    <div class="clbotao">             
+                        <input type="button" id="idOrdemCres" value="Ordem Crescente">
+                    </div>
+                    <div class="clbotao">             
+                        <input type="button" id="idOrdemDecres" value="Ordem Decrescente">
+                    </div>
+
+                </div>
+
+                <div class="clDisplayResultado">
+                    <textarea id="idResultado" name="nmResultado"
+                        cols="30" rows="10" readonly>
+                    </textarea>
+                </div>
+
+            </div>
+
+                <script>
+
+                    var numeros = []
+                    var btIncluir = document.getElementById("idCapturarDados")
+                    var btOrdemCres = document.getElementById("idOrdemCres")
+                    var btOrdemDecres = document.getElementById("idOrdemDecres")
+                    var saida =  document.getElementById("idResultado")
+                    
+                    
+                    //bubble sort - ordenação pelo metodo da bolha
+
+
+
+
+                    btIncluir.onclick = function() {
+                        numeros.push(Number(document.getElementById("idNum").value))
+                        document.getElementById("idNum").value = ""
+                        console.log(numeros)
+                    }
+                    
+                    
+                    btOrdemCres.onclick = function(){
+                        saida.value = "Ordem Crescente: " + bubbleSortCres(numeros).toString()
+                    }
+
+                    btOrdemDecres.onclick = function() {
+                        saida.value = "Ordem Decrescente: " + bubbleSortDecres(numeros).toString()
+                    }
+                    
+                    function bubbleSortCres(numeros) {
+                        var isTrocou = true
+                        while (isTrocou) {
+                            isTrocou = false
+                        
+                        for (let i = 0; i < numeros.length; i++) {
+                            if (numeros[i] > numeros [i+1]) {
+                                isTrocou = true
+                                let aux = numeros[i]
+                                numeros[i] = numeros[i+1]
+                                numeros[i+1] = aux
+                            }
+                        }
+                        } 
+                        return numeros
+                    }
+                    
+                    function bubbleSortDecres(numeros) {
+                        var isTrocou = true
+                        while (isTrocou) {
+                            isTrocou = false
+                        
+                            for (let i = 0; i < numeros.length; i++) {
+                                if (numeros[i] < numeros [i+1]) {
+                                    isTrocou = true
+                                    let aux = numeros[i]
+                                    numeros[i] = numeros[i+1]
+                                    numeros[i+1] = aux
+                                }
+                                
+                            }
+                        }   
+                        return numeros
+                    }
+
+                </script>
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </body>
+</html>
+
+
+

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Document</title>
+            <style>
+                .margens {
+                    margin-top: 5px;
+                    margin-left: 10px;
+                    margin-right: 10px;
+                }
+        
+                .line {
+                    display: inline;
+                }
+        
+                .entrada {
+                    width: 90%;
+                }
+        
+                .row {
+                    display: flex;
+                }
+        
+                .col40 {
+                    width: 40vw;
+                }
+        
+                .col20 {
+                    width: 20vw;
+                }
+        
+                .col100 {
+                    width: 100%;
+                }
+        
+                .alerta {
+                    color: red;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="row">
+                <div class="col40">
+
+                </div>
+                    <form action="" method="get">
+                        <div class="col20">
+                            <fieldset>
+                                <legend>COTAÇÃO DE MOEDA DE ACORDO COM A DATA</legend>
+                                <div class="clSelect" id="idSelect">
+                                    <label for="idLbMoedas" class="line margens">Selecione a Moeda</label><br>
+                                    <select name="nmMoedas" id="idMoedas" class="entrada margens">
+                                        <option value="USD">Dólar Americano</option>
+                                        <option value="CAD">Dólar Canadence</option>
+                                        <option value="EUR">Euro</option>
+                                        <option value="GBP">Libra Esterlina</option>
+                                        <option value="AUD">Dólar australiano</option>
+                                        <option value="CHF">Franco suíço</option>
+                                        <option value="DKK">Coroa dinamarquesa</option>
+                                        <option value="JPY">Iene</option>
+                                        <option value="NOK">Coroa norueguesa</option>
+                                        <option value="SEK">Coroa sueca</option>
+                                    </select>
+                                </div>
+                                <div class="margens" id="idLabel" >
+                                    <label for="idLbData">Digite a data que deseja saber a cotação</label>
+                                </div>
+                                <div class="clInput">
+                                    <div>
+                                        <input type="text" id="idData" placeholder="ex. 06-14-2022" class="entrada margens">
+                                    </div>    
+                                </div>
+                                <div class="clBotao" id="idBotao">
+                                    <button type="button" id="idBtRelatorio" class="margens">Relatório</button>
+                                </div>
+                                <div class="margens">
+                                    <textarea id="idResultado" name="nmResultado"
+                                        cols="50" rows="15" readonly>
+                                    </textarea>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </form>
+            </div>
+            <script>
+              
+                
+                
+                var cotacao = []
+                var btRelatorio = document.getElementById("idBtRelatorio")
+               
+
+
+                btRelatorio.onclick = function(){
+                    let data = document.getElementById("idData").value
+                    let moeda = document.getElementById("idMoedas").value
+                    buscarcotacao(moeda,data)
+                   
+                console.log(moeda)
+                console.log(data)
+                }
+
+            
+                function buscarcotacao(moeda,data) {
+                   
+                    var xhr = new XMLHttpRequest(); 
+
+                    xhr.open("GET", "https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoMoedaDia(moeda=@moeda,dataCotacao=@dataCotacao)?@moeda='"+moeda+"'&@dataCotacao='"+data+"'&$top=100&$format=json&$select=paridadeCompra,paridadeVenda,cotacaoCompra,cotacaoVenda,dataHoraCotacao,tipoBoletim")
+
+                    xhr.addEventListener("load", function(){
+                    var cotacao = xhr.responseText;
+                        imprimirCotacao(cotacao)
+                    })
+                        
+                    xhr.send()
+
+                }
+
+                function imprimirCotacao(cotacaoJson) {                                    
+                    let cotacaoObj = JSON.parse(cotacaoJson);
+                    let msn = "("
+                    cotacaoObj.value.forEach(boletim => {
+                        
+                        msn = msn + boletim.paridadeCompra + ";"
+
+                    });
+                    msn = msn + ")"
+                    
+                    console.log(cotacaoObj);
+                    document.getElementById("idResultado").value = msn
+                    
+                }
+                
+              
+               
+            
+            </script>
+
+            
+            
+        </body>
+</html>
+
+
+
+
+
+
+
+
+

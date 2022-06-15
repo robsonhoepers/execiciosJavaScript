@@ -15,13 +15,11 @@
             <form action="">
                 <div class="input">
                     <div>
-                        <label for="idLbNomes">Nome do Funcionário</label>
-                        <input type="text" name="nmNomes" id="idNomes">
+                        <input type="text" name="nmNomes" id="idNomes" placeholder="Nome Funcionário">
                     </div>
                     
                     <div>
-                        <label for="idLbSalario">Salário</label>
-                        <input type="number" name="nmSalario" id="idSalario" step="0.01">
+                        <input type="number" name="nmSalario" id="idSalario" step="0.01" placeholder="Salário">
                     </div>
                 </div>
 
@@ -29,7 +27,7 @@
                     <textarea id="idResultado" name="nmResultado" cols="30" rows="10" readonly></textarea>
                 </div>
 
-                <div class="radioaButton">
+                <div class="radioButton">
                     <div>
                         <label for="idLbGenero">Selecione o Genero</label>
                     </div>
@@ -43,16 +41,61 @@
 
                 <div class="caixaBotoes">
                     <div class="botao">
-                        <input type="button" id="idCapturarDados" value="Capturar Dados" onclick="capturarelementos()"> 
+                        <input type="button" id="idCadastrar" value="Cadastrar" onclick="capturarelementos()"> 
                     </div>
                     <div class="botao">                 
-                        <input type="button" value="Relatório" onclick="executar()">
+                        <input type="button" id="idRelatorio" value="Relatório" onclick="executar()">
                     </div>
                 </div>
 
 
         <script>
+                //Declaração de Variaveis globais
+                var nomes = []
+                var sexos = []
+                var salarios = []
+                var btCadastrar
+                var btRelatorio
+                var saida
 
+
+
+
+
+                function inicializar(){
+                    btCadastrar = document.getElementById("idCadastrar")
+                    btRelatorio = document.getElementById("idRelatorio")
+                    saida = document.getElementById("idResultado")
+                }   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                /*
                 var salario = []
                 var genero = []
                 var names = []
@@ -99,7 +142,7 @@
                 console.log(listaAuxIdades)
 
                 saida.value = "Nome: " + listaNomes  +  " Idade: " + listaIdades
-            }              
+            }*/           
         </script>
         </body>
 </html>
